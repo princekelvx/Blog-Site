@@ -1,5 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { getCategories } from '../services'
@@ -12,10 +11,6 @@ const Categories = () => {
   }, [])
   return (
     <div className='bg-white shadow-lg rounded-lg p-8 mb-8'>
-      <Head>
-        <title>{categories.map((category) => category.name)}</title>
-        <link type="image/png" sizes="64x64" rel="icon" href="/blog.png"></link>
-      </Head>
       <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
         Categories
       </h3>
@@ -23,6 +18,7 @@ const Categories = () => {
         <Link key={category.slug} href={`/category/${category.slug}`}>
           <span className="cursor-pointer bblock pb-3 mb-3">
             {category.name}
+            <br />
           </span>
         </Link>
       ))}
