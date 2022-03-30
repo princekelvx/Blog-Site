@@ -30,7 +30,7 @@ const Home = ({ posts }) => {
 }
 
 export default Home
-export const getStaticProps = async() => {
+export const getServerSideProps = async() => {
   const posts = (await getPosts()) || [];
 
   return {
